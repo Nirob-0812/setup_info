@@ -390,7 +390,12 @@ Ensure `usbipd` is configured correctly. Re-attach the device:
 ```powershell
 usbipd attach --busid <BUSID> --wsl Ubuntu-18.04
 ```
-
+```powershell
+usbipd bind --busid 1-2
+```
+```powershell
+usbipd attach --busid 1-2 --wsl Ubuntu-18.04
+```
 ---
 
 ## Commands Summary
