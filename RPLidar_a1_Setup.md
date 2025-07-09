@@ -91,11 +91,19 @@ source ~/.bashrc
 1. Check connected USB devices:
    ```bash
    ls -la /dev | grep USB
+   ls /dev/ttyUSB*
    ```
    Find your LIDAR device (e.g., `ttyUSB0`).
 2. Assign permissions:
    ```bash
    sudo chmod 777 /dev/ttyUSB0
+   ```
+3. Poweshell Admin permissions:
+   ```bash
+   usbipd list
+   wsl -l -v
+   usbipd detach --busid 1-3
+   usbipd attach --busid 1-3 --wsl Ubuntu-18.04
    ```
 
 ### Launch the RPLIDAR A1 Node
