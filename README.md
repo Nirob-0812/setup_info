@@ -9,8 +9,8 @@ This repository contains essential setup guides, configuration files, and brief 
 - [DL_Theory.md](./DL_Theory.md)  
   *Brief notes and explanations on Deep Learning theory and basic concepts.*
 
-- [README.md](./README.md)  
-  *This file. An overview of the repository and quick links to all documents.*
+- [Conda Setup.md](./conda_setup.md)  
+  *Instructions in details about conda environment ,CUDA GPU setup for ML and DL *
 
 - [RPLidar_a1_Setup.md](./RPLidar_a1_Setup.md)  
   *Step-by-step guide to set up and use the RPLidar A1 sensor.*
