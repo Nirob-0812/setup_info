@@ -96,6 +96,45 @@ hdmi_mode=82
 ```
 
 ---
+## Headless Setup Configuration (if needed)
+
+If you find that the X server stops or behaves differently when the monitor is disconnected, you may want to configure the system to run in a headless mode. Here's how to handle it:
+
+Prevent X from closing on disconnect (if necessary):
+
+You can install a dummy display driver (like xserver-xorg-video-dummy) to ensure that a virtual display is always running, even without a monitor.
+
+```bash
+sudo apt install xserver-xorg-video-dummy
+```
+Then, configure a dummy display by modifying /etc/X11/xorg.conf to add the Dummy driver:
+```bash
+Section "Device"
+Identifier "Dummy Device"
+Driver "dummy"
+EndSection
+
+Section "Monitor"
+Identifier "Dummy Monitor"
+HorizSync 30-70
+VertRefresh 50-75
+EndSection
+
+Section "Screen"
+Identifier "Dummy Screen"
+Device "Dummy Device"
+Monitor "Dummy Monitor"
+DefaultDepth 24
+SubSection "Display"
+Depth 24
+Modes "1920x1080"
+EndSubSection
+EndSection
+```
+
+Keep the X session active: Ensure that the X server stays active even without a monitor attached by using xorg.conf settings or checking if there is a virtual display active.
+
+
 
 ## 7. **Connect from Windows 11**
 
@@ -130,8 +169,11 @@ nirob0812 ALL=(ALL) NOPASSWD:ALL
 
 ## 9. **References**
 
+- [Linux Mint Forums](https://forums.linuxmint.com/viewtopic.php?t=440131)
 - [x11vnc Official Site](https://www.karlrunge.com/x11vnc/)
 - [RealVNC Viewer](https://www.realvnc.com/en/connect/download/viewer/)
+
+- 
 
 ---
 
