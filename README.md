@@ -12,6 +12,9 @@ This repository contains essential setup guides, configuration files, and brief 
 - [Conda Setup.md](./conda_setup.md)  
   *Instructions in details about conda environment ,CUDA GPU setup for ML and DL *
 
+- [RPLidar_a1_Setup.md](./lidar_ros2_jazzy.md)  
+  *Step-by-step guide to set up ros2 jazzy on pi ubuntu 24.04 LTS.*
+
 - [RPLidar_a1_Setup.md](./RPLidar_a1_Setup.md)  
   *Step-by-step guide to set up and use the RPLidar A1 sensor.*
 
